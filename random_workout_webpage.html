@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Workout Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f7f7f7;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 300px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: black;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    .workout {
+      font-size: 22px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Random Workout</h2>
+    <div id="workout" class="workout">Press the button</div>
+    <button onclick="generateWorkout()">New Workout</button>
+  </div>
+
+  <script>
+    const workouts = [
+      "20 Push-ups",
+      "1-minute Plank",
+      "30 Squats",
+      "15 Burpees",
+      "40 Mountain Climbers",
+      "25 Sit-ups",
+      "20 Lunges (each leg)",
+      "45-second Wall Sit",
+      "15 Jump Squats",
+      "1-minute High Knees"
+    ];
+
+    function generateWorkout() {
+      const random = Math.floor(Math.random() * workouts.length);
+      document.getElementById("workout").textContent = workouts[random];
+    }
+  </script>
+</body>
+</html>
